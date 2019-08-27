@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<errno.h>
 #include"ARRAY.h"
 int main(){
     int ch,size,valid,val,pos,i;
@@ -13,29 +14,21 @@ int main(){
         switch (ch)
         {
             case 1: 
-                printf("\nEnter the Dimension of array");
+                printf("\nEnter the Dimension of array : ");
                 scanf("%d",&size);
                 valid=create(&num,size);
-                if(valid)
+                if(valid==errno)
                 {
-                    printf("Array created\n");
-                }
-                else
-                {
-                    printf("Array not created\n");
+                    printf("\nArray not created\n");
                 }
                 break;
             case 2: 
-                printf("\nEnter the value and Postion in array ");
+                printf("\nEnter the value and Postion in array\n ");
                 scanf("%d,%d",&val,&pos);
                 valid=store(&num,val,pos);
-                if(valid)
+                if(valid==errno)
                 {
-                    printf("Inserted values in Array\n");
-                }
-                else
-                {
-                    printf("Failed to Insert");
+                    printf("\nFailed to Insert");
                 }
                 break;
             case 3:

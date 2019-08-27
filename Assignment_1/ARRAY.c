@@ -1,17 +1,21 @@
 #include"ARRAY.h"
 #include<stdio.h>
 #include<stdlib.h>
-int create(ARRAY* aptr ,int size){
+#include<errno.h>
+int create(ARRAY* aptr ,int size)
+{
 int* temp;
 aptr->dim=size;
 temp=(int*)malloc(sizeof(int) * size);
 aptr->base =temp;
-if(temp != NULL){
-return 1;
-}
-else{
-return 0;
-}
+if(temp != NULL)
+    {
+        printf("Array Created");
+    }
+    else
+    {
+        return errno=EINVAL;
+    }
 }
 
 int store(ARRAY* aptr,int val,int pos)
@@ -20,12 +24,12 @@ int store(ARRAY* aptr,int val,int pos)
    if(*(a+pos)>aptr->dim)
    {
        printf("Out of Bounds");
-       return 0;
+       return errno=EINVAL;
    }
    *(a+pos)=val;
    if((a+pos)==NULL)
    {
-       return 0;
+       return errno=EINVAL;
    }
    else
    {
