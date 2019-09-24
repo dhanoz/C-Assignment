@@ -1,7 +1,7 @@
 /*
  * silist.h - header file for list api for creating and managing single linked list of integers. 
- * author -  Harshad Gune, harshad.gune@gmail.com
- * version - 1.0, August 31, 2019
+ * author - Dhananjay ,dhp1942012@gmail.com
+ * version - 1.0, September 24 , 2019
  */
 
 # ifndef SI_LIST_H
