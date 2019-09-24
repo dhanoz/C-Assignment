@@ -2,7 +2,7 @@
  * si_list.c - Ane api to provide basic functions to create, read, write and process a list of integers.
  * 
  * author - Dhananjay Purohit, dhp1942012@gmail.com
- * version - 1.0, October 5, 2019 
+ * version - 2.0, September 24, 2019 
  */
 
 # include <stdio.h>
@@ -157,4 +157,30 @@ while (temp->next!=NULL)
  } 
 return counter;
   // Code to print the value (data) of nodes in the list.
+}
+int sin_mid(SINODE* head)  // Finds mid point of List
+{
+  struct slnode* first,*second;
+  first=head; 
+  second=head;
+  while(second!=NULL && second->next!=NULL) //check for last node address is null or not 
+  {
+  second=second->next->next;
+    if(second!=NULL && second->next!=NULL)
+    {
+    first=first->next; 
+    }
+  }
+    int mid=first->data;
+    return mid;
+}
+void sin_display(SINODE* head) // Displays the entire List 
+{
+  SINODE* temp;
+  temp=head;
+  while(temp->next!=NULL)
+  {
+    printf("%d \t",temp->data);
+    temp=temp->next;
+  }
 }
