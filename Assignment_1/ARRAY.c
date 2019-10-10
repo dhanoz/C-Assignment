@@ -21,7 +21,7 @@ if(temp != NULL)
 int store(ARRAY* aptr,int val,int pos)
  {
    int*a=aptr->base;
-   if(*(a+pos)>aptr->dim)
+   if(pos > aptr->dim)
    {
        printf("Out of Bounds");
        return errno=EINVAL;

@@ -24,7 +24,7 @@ int main(){
                 break;
             case 2: 
                 printf("\nEnter the value and Postion in array\n ");
-                scanf("%d,%d",&val,&pos);
+                scanf("%d %d",&val,&pos);
                 valid=store(&num,val,pos);
                 if(valid==errno)
                 {
